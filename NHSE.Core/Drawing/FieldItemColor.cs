@@ -1,9 +1,17 @@
-﻿using System.Drawing;
+using System.Drawing;
 
 namespace NHSE.Core
 {
+    /// <summary>
+    /// 提供获取场地物品颜色的功能
+    /// </summary>
     public static class FieldItemColor
     {
+        /// <summary>
+        /// 根据物品获取对应的颜色
+        /// </summary>
+        /// <param name="item">物品对象</param>
+        /// <returns>物品对应的颜色</returns>
         public static Color GetItemColor(Item item)
         {
             if (item.DisplayItemId >= Item.FieldItemMin)
@@ -12,6 +20,11 @@ namespace NHSE.Core
             return ColorUtil.GetColor((int)kind);
         }
 
+        /// <summary>
+        /// 获取场地物品（ID >= 60000）的颜色
+        /// </summary>
+        /// <param name="item">物品对象</param>
+        /// <returns>场地物品对应的颜色</returns>
         private static Color GetItemColor60000(Item item)
         {
             var id = item.DisplayItemId;
@@ -37,12 +50,17 @@ namespace NHSE.Core
             if (kind.IsStone())
                 return Color.LightGray;
 
-            return Color.DarkGreen; // shouldn't reach here, but ok
+            return Color.DarkGreen; // 理论上不会到达这里，但作为默认值
         }
 
+        /// <summary>
+        /// 获取树木对应的颜色
+        /// </summary>
+        /// <param name="id">树木的物品ID</param>
+        /// <returns>树木对应的颜色</returns>
         private static Color GetTreeColor(ushort id)
         {
-            if (0xEC9C <= id && id <= 0xECA0) // money tree
+            if (0xEC9C <= id && id <= 0xECA0) //  money tree
                 return Color.Gold;
 
             return id switch

@@ -99,6 +99,7 @@ Editor.L_WeatherSeed=气象种子
 Editor.Menu_DumpDecrypted=转储已解密信息
 Editor.Menu_File=文件
 Editor.Menu_ItemImages=物品图片
+Editor.Menu_Luna=梦境复刻
 Editor.Menu_LoadDecrypted=加载已解密信息
 Editor.Menu_Options=选项
 Editor.Menu_RAMEdit=编辑 RAM

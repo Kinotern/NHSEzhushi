@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -144,6 +144,21 @@ namespace NHSE.WinForms
 
         private void Menu_ItemImages_Click(object sender, EventArgs e)
         {
+            var exist = WinFormsUtil.FirstFormOfType<ImageFetcher>();
+            if (exist != null)
+            {
+                exist.Show();
+                return;
+            }
+
+            var imgfetcher = new ImageFetcher();
+            imgfetcher.Show();
+        }
+
+        private void Menu_Luna_Click(object sender, EventArgs e)
+        {
+            // 实现Luna功能
+            // 这里可以根据需要打开相应的窗体或执行相应的操作
             var exist = WinFormsUtil.FirstFormOfType<ImageFetcher>();
             if (exist != null)
             {

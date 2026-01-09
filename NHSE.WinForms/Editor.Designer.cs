@@ -1,4 +1,4 @@
-﻿namespace NHSE.WinForms
+namespace NHSE.WinForms
 {
     public partial class Editor
     {
@@ -39,6 +39,7 @@
             this.Menu_LoadDecrypted = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_RAMEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_ItemImages = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Luna = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Options = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Language = new System.Windows.Forms.ToolStripComboBox();
             this.Menu_Settings = new System.Windows.Forms.ToolStripMenuItem();
@@ -196,11 +197,20 @@
             // 
             // Menu_ItemImages
             // 
+            this.Menu_ItemImages.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Menu_Luna});
             this.Menu_ItemImages.Name = "Menu_ItemImages";
             this.Menu_ItemImages.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
             this.Menu_ItemImages.Size = new System.Drawing.Size(206, 22);
             this.Menu_ItemImages.Text = "Item Images";
-            this.Menu_ItemImages.Click += new System.EventHandler(this.Menu_ItemImages_Click);
+            // 
+            // Menu_Luna
+            // 
+            this.Menu_Luna.Name = "Menu_Luna";
+            this.Menu_Luna.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.Menu_Luna.Size = new System.Drawing.Size(206, 22);
+            this.Menu_Luna.Text = "Luna";
+            this.Menu_Luna.Click += new System.EventHandler(this.Menu_Luna_Click);
             // 
             // Menu_Options
             // 
@@ -966,6 +976,7 @@
         private System.Windows.Forms.Label L_WeatherSeed;
         private System.Windows.Forms.NumericUpDown NUD_WeatherSeed;
         private System.Windows.Forms.ToolStripMenuItem Menu_ItemImages;
+        private System.Windows.Forms.ToolStripMenuItem Menu_Luna;
         private System.Windows.Forms.Label L_Poki;
         private System.Windows.Forms.NumericUpDown NUD_Poki;
     }

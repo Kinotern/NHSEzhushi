@@ -3,20 +3,31 @@ using System.Linq;
 
 namespace NHSE.Core
 {
+    /// <summary>
+    /// 提供颜色相关的工具方法
+    /// </summary>
     public static class ColorUtil
     {
+        /// <summary>
+        /// 根据索引获取颜色
+        /// </summary>
+        /// <param name="index">颜色索引</param>
+        /// <returns>对应的颜色，如果索引超出范围则返回与红色混合后的颜色</returns>
         public static Color GetColor(int index)
         {
             var arr = Colors;
             if ((uint) index < arr.Length)
                 return arr[index];
 
-            // loop back and blend with something else
+            // 索引超出范围时，循环回到数组开始并与红色混合
             index %= arr.Length;
             var c = arr[index];
             return Blend(Color.Red, c, 0.2f);
         }
 
+        /// <summary>
+        /// 预定义的颜色数组
+        /// </summary>
         private static readonly Color[] Colors = new[]
         {
             0xD9D9D9, 0xCCD9E8, 0x7F7F7F, 0xD5D5D5, 0xF7F7F7, 0xCFCFCF, 0xB4B4B4, 0xF1F1F1,
@@ -43,6 +54,13 @@ namespace NHSE.Core
             0xFFFFFF, 0xCFCFCF, 0xDCE8F4, 0xEBF1F8, 0xF7F7F7, 0x99CCFF,
         }.Select(z => Color.FromArgb(z | -0x1000000)).ToArray();
 
+        /// <summary>
+        /// 混合两种颜色
+        /// </summary>
+        /// <param name="color">前景色</param>
+        /// <param name="backColor">背景色</param>
+        /// <param name="amount">混合比例（0-1），值越大前景色占比越高</param>
+        /// <returns>混合后的颜色</returns>
         public static Color Blend(Color color, Color backColor, double amount)
         {
             byte r = (byte)((color.R * amount) + (backColor.R * (1 - amount)));

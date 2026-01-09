@@ -1,15 +1,33 @@
-﻿namespace NHSE.Core
+namespace NHSE.Core
 {
     /// <summary>
-    /// Provides information for hashing different revisions of the game's savedata.
+    /// 为游戏存档的不同版本提供哈希信息
     /// </summary>
     public static class FileHashRevision
     {
+        /// <summary>
+        /// 主存档文件名
+        /// </summary>
         private const string FN_MAIN = "main.dat";
+        /// <summary>
+        /// 个人存档文件名
+        /// </summary>
         private const string FN_PERSONAL = "personal.dat";
+        /// <summary>
+        /// 邮箱存档文件名
+        /// </summary>
         private const string FN_POSTBOX = "postbox.dat";
+        /// <summary>
+        /// 摄影棚岛屿存档文件名
+        /// </summary>
         private const string FN_PHOTO = "photo_studio_island.dat";
+        /// <summary>
+        /// 配置文件存档文件名
+        /// </summary>
         private const string FN_PROFILE = "profile.dat";
+        /// <summary>
+        /// 位置信息存档文件名
+        /// </summary>
         private const string FN_WHEREAREN = "wherearen.dat";
 
         #region REVISION 1.0.0
